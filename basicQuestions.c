@@ -57,4 +57,64 @@ Correct Post order traversal:
 11, 9, 15, 13, 21, 23, 19, 17
 
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Question #2
+Consider the following Array:
+55, 40, 45, 48, 10, 46, 15
+These are inserted into a max heap one by one. The resultant Max heap will be:
+
+Answer:
+Heap:
+A Binary Heap is a Binary Tree with following properties.
+1.	It’s a binary complete tree (All levels are completely filled except possibly the last level and the last level has all keys as left as possible).
+	This property of Binary Heap makes them suitable to be stored in an array.
+	
+2.	Binary Heap is of two types:
+		i.	Min Heap
+			In a Min Binary Heap, the key at root must be MINIMUM among all keys present in Binary Heap.
+			The same property must be recursively true for all nodes in Binary Tree.
+			
+		ii.	Max Heap
+			Max Binary Heap is similar to MinHeap.
+			the key at root must be MAXIMUN among all keys present in Binary Heap.
+
+		Root
+		55			Add 40			55			Add 45			55				Add 48				55			Swap				55
+					===>		   /			===>		   /  \				===>			   /  \			===>			   /  \
+								 40							 40	   45							 40	   45						 48	   45
+																								/								/
+																							  48							  40
+
+
+Add 10			55			Add 46					55				Swap				55				Add 15				55
+===>		   /  \			===>				  /	    \			===>			  /	    \			===>			  /		\
+			 48	   45						   48		   45					   48		   46					    48		  46
+			/  \							  /  \		  /						  /  \		  /						   /  \		 /  \
+		  40	10							40	  10	46						40	  10	45						 40    10  45	 10
+
+		  																											Required Max Heap Tree
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 */
