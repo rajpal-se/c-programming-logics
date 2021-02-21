@@ -1,5 +1,6 @@
 // Variadic are used to handle unknown number of arguments
 
+// Program 1
 // Simple program to sum up "num" numbers
 #include <stdio.h>
 #include <stdarg.h>
@@ -22,32 +23,39 @@ int main (){
 	printf("Sum: %d", sum(3, 5, 7, 3) );
 	return 0;
 }
+/*
+Output:
+5
+7
+3
+Sum: 15
+*/
 
+/*--------------------------------------------------------------------------------------------------------------------------------------------*/
+// use of "va_copy" function
 
-
-
+// Program 2.1
 #include <stdio.h>
 #include <stdarg.h>
 
-int sum(int num, ...){
+void printArgs(int num, ...){
     va_list va, va2;
     va_start(va, num);
+    va_copy(va2, va);
 
-    int sum = 0;
-    va_end(va);
-    for(int i=0; i<num+2; i++){
-        if(i==1) va_copy(va2, va);
+    printf( "Variable va values:\n" );
+    for(int i=0; i<num; i++){
+        // if(i==1) va_copy(va2, va);
         printf( "%d\n", va_arg(va, int) );
     }
-    printf( "----------------------------------\n" );
+    printf( "Variable va2 values:\n" );
     for(int i=0; i<num; i++)
         printf( "%d\n", va_arg(va2, int) );
 
-    // va_end(va);
-    return sum;
+    va_end(va);
 }
 
 int main (){
-    printf("%d", sum(3, 5, 7, 3) );
+    printArgs(3, 5, 7, 3);
     return 0;
 }
